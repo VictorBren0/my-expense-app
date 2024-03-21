@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Container, Logo, SubTitle, Title } from './styles';
+import CardProfile from '@/components/cardProfile';
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Container>
+      <Logo source={require("../../assets/logo.png")} />
+      <Title>Bem Vindo(a)</Title>
+      <SubTitle>Escolha um Usuário</SubTitle>
+      <CardProfile icon={"person-sharp"} name={"victor"} onPress={() => console.log("cliquei")}/>
+      <CardProfile icon={"add"} name={null} onPress={() => console.log("Add")}/>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
