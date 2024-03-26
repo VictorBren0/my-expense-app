@@ -19,7 +19,7 @@ export const SubTitle = styled.Text`
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fonts.family.regular};
   text-align: center;
-  margin: 50px 0 50px 0;
+  margin: 50px 0 20px 0;
 `;
 
 export const Logo = styled.Image`
@@ -27,4 +27,8 @@ export const Logo = styled.Image`
     height: 150px;
     margin: 60px 0 20px 0;    
     align-self: center;
+`;
+
+export const ContentCard = styled.View`
+    margin: 15px;
 `;
