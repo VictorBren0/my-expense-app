@@ -15,7 +15,7 @@ import {
 import { theme } from "../theme"
 import { SQLiteProvider } from "expo-sqlite/next"
 import { ThemeProvider } from "styled-components"
-/* import { databaseInit } from "@/database/databaseInit" */
+import { databaseInit } from "@/database/databaseInit"
 
 SplashScreen.preventAutoHideAsync()
 
@@ -38,9 +38,9 @@ export default function Layout() {
     >
       <StatusBar style="light" />
       <ThemeProvider theme={theme}>
-      {/* <SQLiteProvider databaseName="mygoals.db" onInit={databaseInit}> */}
+      <SQLiteProvider databaseName="expense.db" onInit={databaseInit}>
         <Slot />
-      {/* </SQLiteProvider> */}
+      </SQLiteProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   )

@@ -21,10 +21,7 @@ export function useUsersRepository() {
                 "INSERT INTO users (name, color, created_at) VALUES (?, ?, ?)"
             );
 
-            statement.executeSync({
-                $name: user.name,
-                $color: user.color,
-            });
+            statement.executeSync([user.name, user.color, new Date().toISOString()]);
         } catch (error) {
             throw error;
         }
